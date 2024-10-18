@@ -319,7 +319,7 @@ function searchCityImage(cityName) {
 
 async function updateCityDescription(city) {
     const OPENROUTER_API_KEY = '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';
-    const chatPrompt = `Dê uma descrição em português Brasil, com no mínimo 400 letras e no máximo 800 letras, explicando por que visitar ${city}. Coloque o nome da cidade e de pontos turísticos dentro da tag <span>. Responda somente com o texto solicitado`;
+    const chatPrompt = `Dê uma descrição em português (Brasil), com no mínimo 400 e no máximo 800 caracteres, explicando de forma envolvente por que visitar a cidade de ${city}. Inclua no texto o nome da cidade e pelo menos dois pontos turísticos, destacando-os dentro da tag <span>. Responda apenas com o texto solicitado, sem informações adicionais.`;
     const url = 'https://openrouter.ai/api/v1/chat/completions';
     const options = {
         method: 'POST',
