@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetUp Spot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="logo"><img src="assets/logo.svg" alt="Logo"></div>
+    
+    <div class="slogan-box">
+        <a href="https://github.com/FernandoZMaciel/meet-up-spot-backend" target="_blank"><i class='bx bxl-github'></i></a>
+        <p class="slogan">Escolha suas cidades, e nós encontraremos <br> o lugar <span>ideal</span> para se encontrar com seus amigos!</p>
+    </div>
+
+
+
+    <section class="main-section">
+    <div class="entry-box">
+        <div class="uf-select-menu">
+            <div class="select-uf">
+                <span>UF</span>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="uf-options-list">
+                <div class="uf-option">AC</div>
+                    <div class="uf-option">AL</div>
+                    <div class="uf-option">AM</div>
+                    <div class="uf-option">AP</div>
+                    <div class="uf-option">BA</div>
+                    <div class="uf-option">CE</div>
+                    <div class="uf-option">DF</div>
+                    <div class="uf-option">ES</div>
+                    <div class="uf-option">GO</div>
+                    <div class="uf-option">MA</div>
+                    <div class="uf-option">MG</div>
+                    <div class="uf-option">MS</div>
+                    <div class="uf-option">MT</div>
+                    <div class="uf-option">PA</div>
+                    <div class="uf-option">PB</div>
+                    <div class="uf-option">PE</div>
+                    <div class="uf-option">PI</div>
+                    <div class="uf-option">PR</div>
+                    <div class="uf-option">RJ</div>
+                    <div class="uf-option">RN</div>
+                    <div class="uf-option">RO</div>
+                    <div class="uf-option">RR</div>
+                    <div class="uf-option">RS</div>
+                    <div class="uf-option">SC</div>
+                    <div class="uf-option">SE</div>
+                    <div class="uf-option">SP</div>
+                    <div class="uf-option">TO</div>
+            </div>
+        </div>
+
+        <div class="ct-select-menu">
+            <div class="select-ct">
+                <span>Selecione sua cidade!</span>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <input type="text" class="city-search" placeholder="Digite para filtrar...">
+            <div class="ct-options-list">
+                <!-- Opções de cidades serão injetadas pelo JavaScript -->
+            </div>
+        </div>
+        
+        <button id="add-button" class="disabled" disabled>Adicionar</button>
+
+        
+    </div>
+    <button id="calculate-button">Definir melhor ponto de encontro!</button>
+    <div class="box-cities">
+        <ul class="tb-cities">
+        </ul>
+    </div>
+</section>
+<section class="city-section">
+    <div class="spot-box">
+        <h1 class="chosen-city">
+            A cidade perfeita para o ponto de encontro de vocês é <span></span>
+        </h1>
+        <div class="img-city-box">
+            <img id = "cityImage" class="cityImage" alt="City">
+            <p id = "city-description" ></p>
+        </div>
+    </div>
+</section>
+
+<section class="log-section">
+    <div class="log-box">
+        <h2>Informações da Viagem</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome da Cidade</th>
+                        <th>Distância</th>
+                        <th>Tempo</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Linhas da tabela serão inseridas aqui -->
+                </tbody>
+            </table>
+        </div>   
+    <button id="back-button" >Voltar ao início</button>
+</section>
+
+    <script src="script.js"></script>
+</body>
+    
+</html>
