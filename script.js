@@ -216,6 +216,7 @@ function fetchCoordinates() {
     const citiesList = Array.from(liItems).map(li => li.textContent.trim());
 
     const apiUrl = buildUrlWithParams(citiesList);
+    console.log(apiUrl);
 
     fetch(apiUrl)
         .then(response => {
@@ -319,7 +320,7 @@ function searchCityImage(cityName) {
 
 async function updateCityDescription(city) {
     const OPENROUTER_API_KEY = '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';
-    const chatPrompt = `Dê uma descrição em português (Brasil), com no mínimo 400 e no máximo 800 caracteres, explicando de forma envolvente por que visitar a cidade de ${city}. Inclua no texto o nome da cidade e pelo menos dois pontos turísticos, destacando-os dentro da tag <span>. Responda apenas com o texto solicitado, sem informações adicionais.`;
+    const chatPrompt = `Crie uma descrição em português (Brasil) de 400 a 800 caracteres explicando por que visitar a cidade de ${city}. Inclua o nome da cidade e pelo menos dois pontos turísticos, utilizando a tag <span> para destacá-los. Certifique-se de que a descrição seja envolvente e informativa. Responda somente com o texto solicitado, sem adicionar informações extras.`;
     const url = 'https://openrouter.ai/api/v1/chat/completions';
     const options = {
         method: 'POST',
@@ -328,7 +329,7 @@ async function updateCityDescription(city) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            model: 'meta-llama/llama-guard-2-8b',
+            model: 'openai/gpt-3.5-turbo-0613',
             messages: [
                 { role: 'user', content: chatPrompt }
             ]
