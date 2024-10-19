@@ -201,7 +201,7 @@ function logListItems() {
 
 }
 
-const baseUrl = 'http://localhost:8080/coordinates/meetup-spot';
+const baseUrl = 'https://meet-up-spot.onrender.com/coordinates/meetup-spot';
 
 function buildUrlWithParams(list) {
     const params = list.map(item => `request=${encodeURIComponent(item)}`).join('&');
