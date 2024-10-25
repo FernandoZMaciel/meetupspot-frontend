@@ -396,6 +396,7 @@ function convertDuration(seconds) {
 
 document.addEventListener("DOMContentLoaded", function() {
     function resetToDefault() {
+        alert("Estamos iniciando o servidor... Por ser uma hospedagem gratuita, o primeiro acesso pode demorar um pouquinho (até 1 minutinho). Obrigado pela paciência! 😄");
         document.querySelector(".slogan-box").style.opacity = 0;
         document.querySelector(".logo img").style.opacity = 0;
         document.querySelector(".entry-box").style.opacity = 0;
